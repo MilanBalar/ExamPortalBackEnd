@@ -23,7 +23,7 @@ import com.boot.server.exam.service.impl.UserDetailsSeviceImplSecurity;
 import com.boot.server.exam.springsecurityconfig.JwtUtils;
 
 @RestController
-@CrossOrigin("*") // it's allow all the host
+@CrossOrigin("*")
 public class AuthenticationController {
 
 	@Autowired

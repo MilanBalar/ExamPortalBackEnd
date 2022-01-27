@@ -5,6 +5,7 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.boot.server.exam.exception.UserFoundException;
 import com.boot.server.exam.models.TblUser;
 import com.boot.server.exam.models.TblUsersRole;
 import com.boot.server.exam.repository.RoleRepository;
@@ -26,7 +27,7 @@ public class UserServiceImpl implements UserService{
 		TblUser userByUserName = userRepository.findTblUserByUserName(tblUser.getUserName());
 		if (userByUserName != null) {
 			System.out.println("User is already exist");
-			throw new Exception("User is already exist");
+			throw new UserFoundException();
         } else {
 			for (TblUsersRole tblUsersRole : tblUsersRoles) {
 				roleRepository.save(tblUsersRole.getTblRoles());

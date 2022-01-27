@@ -23,7 +23,7 @@ public class UserDetailsSeviceImplSecurity implements UserDetailsService {
 			System.out.println("User not found !!");
 			throw new UsernameNotFoundException("User not found !!");
 		}
-
+		System.out.println("<<<---- Jwt token generate by------>>> "+user.getUsername());
 		return user;
 	}
 

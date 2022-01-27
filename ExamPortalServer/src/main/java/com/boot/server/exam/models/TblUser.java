@@ -5,6 +5,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -23,11 +24,17 @@ public class TblUser implements UserDetails {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long userId;
+	@Column(unique = true,nullable = false)
 	private String userName;
+	@Column(nullable = false)
 	private String password;
+	@Column(nullable = false)
 	private String firstName;
+	@Column(nullable = false)
 	private String lastName;
+	@Column(nullable = false)
 	private String email;
+	@Column(nullable = false)
 	private String phone;
 	private boolean isActive=true;
 
